@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #4CAF50;
+    --cor-secundaria: #2E7D32;
+    --cor-branca: #f5f5f5;
+    --cor-cinza: #b0b0b0;
+    --cor-cinza-escuro: #121212;
+    --cor-preto: #000;
+    --fonte-primaria: 'Roboto', sans-serif;
+    --radius: 8px;
+    --transicao: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-primaria);
+}
+
+body {
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-branca);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-preto);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+.agende-btn {
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transicao);
+}
+.agende-btn:hover {
+    background: var(--cor-secundaria);
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.banner-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
+}
+.banner-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.btn-primario {
+    background: var(--cor-primaria);
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+.btn-primario:hover {
+    background: var(--cor-secundaria);
+}
+
+.btn-secundario {
+    background: transparent;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+.btn-secundario:hover {
+    background: var(--cor-primaria);
+    color: white;
+}
+
+/* Destaque */
+.destaque {
+    text-align: center;
+    padding: 50px 20px;
+}
+.emoji-text {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.destaque-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Vídeo */
+.video-section {
+    text-align: center;
+    padding: 30px 0;
+}
+.drone-video {
+    max-width: 90%;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Benefícios */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 40px 20px;
+}
+.card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: bold;
+    transition: var(--transicao);
+}
+.card:hover {
+    background: var(--cor-primaria);
+    transform: translateY(-5px);
+}
+
+/* Depoimento */
+.depoimento {
+    background: var(--cor-branca);
+    color: var(--cor-cinza-escuro);
+    padding: 50px 20px;
+    text-align: center;
+}
+.depoimento-conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.depoimento-texto {
+    max-width: 400px;
+    font-size: 1rem;
+}
+.depoimento img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.depoimento-avaliacao {
+    font-size: 0.9rem;
+}
+
+/* Formulário */
+.formulario {
+    background: var(--cor-branca);
+    color: var(--cor-cinza-escuro);
+    padding: 50px 20px;
+}
+.formulario-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.formulario input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    outline: none;
+}
+.formulario input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px var(--cor-primaria);
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+}
+/* Área Unificada */
+.prova-social-e-formulario {
+    background: var(--cor-branca);
+    color: var(--cor-cinza-escuro);
+    padding: 60px 20px;
+}
+
+.prova-social-e-formulario .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Colunas */
+.coluna {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Títulos */
+.titulo-secao {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Depoimento */
+.depoimento {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.foto-cliente {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.texto-depoimento {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.autor-depoimento {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.avaliacao {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Formulário */
+.formulario-bloco .desc {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.formulario {
+    margin-top: 20px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-grupo label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.input-grupo input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    outline: none;
+    transition: border var(--transicao), box-shadow var(--transicao);
+}
+
+.input-grupo input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px var(--cor-primaria);
+}
+
+/* Botão */
+.btn-primario {
+    background: var(--cor-primaria);
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    width: 100%;
+}
+
+.btn-primario:hover {
+    background: var(--cor-secundaria);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .prova-social-e-formulario .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .formulario {
+        text-align: left;
+    }
+}
